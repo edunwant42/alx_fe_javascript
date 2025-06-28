@@ -1,4 +1,4 @@
-/* Reset default browser styles */
+/* Reset default styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,20 +6,22 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body styling */
+/* Body layout */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   background-color: #f4f4f4;
+  padding: 1rem;
 }
 
+/* Container */
 .container {
   max-width: 600px;
   width: 100%;
-  padding: 2rem;
   background-color: #fff;
+  padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -27,19 +29,17 @@ body {
 
 /* Header */
 h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
   color: #007acc;
+  margin-bottom: 1.5rem;
 }
 
-/* Quote display box */
+/* Quote display */
 #quoteDisplay {
   background-color: #fff;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
-  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 #quoteDisplay p {
@@ -51,30 +51,87 @@ h1 {
   color: #555;
 }
 
-/* Button styling */
+/* Buttons */
 button {
   background-color: #007acc;
   color: white;
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1.5rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 0.5rem;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 button:hover {
   background-color: #005fa3;
 }
 
-/* Input fields */
-input[type="text"] {
-  padding: 0.5rem;
-  width: 100%;
-  margin: 0.3rem 0;
+/* Input group with icon */
+.input-icon {
+  display: inline-flex;        /* flex container for icon + input */
+  align-items: center;
+  width: 80%;                 /* controls overall width */
+  margin: 0.5rem 0;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: white;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }
 
-div input + input {
-  margin-top: 0.5rem;
+.input-icon i {
+  color: #007acc;
+  font-size: 1rem;
+  margin-right: 0.5rem;       /* spacing between icon and input */
+  flex-shrink: 0;
+}
+
+.input-icon input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0;
+  width: auto;               /* input fills remaining space */
+  background: transparent;
+}
+
+/* Flex container for actions */
+.quote-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* File input style */
+.quote-actions input[type="file"] {
+  padding: 0.45rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+  max-width: 240px;
+  margin-bottom: 1rem;
+}
+
+.quote-actions input[type="file"]::file-selector-button {
+  background-color: #007acc;
+  color: #fff;
+  padding: 0.45rem 1rem;
+  border: none;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quote-actions input[type="file"]::file-selector-button:hover {
+  background-color: #005fa3;
 }
