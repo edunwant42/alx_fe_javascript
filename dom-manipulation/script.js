@@ -116,6 +116,21 @@ function displayQuotes(quoteArray) {
   sessionStorage.setItem("lastQuote", JSON.stringify(quote));
 }
 
+// *** Added function required by tests ***
+function showRandomQuote() {
+  if (quotes.length === 0) {
+    document.getElementById("quoteDisplay").innerHTML = `<p>No quotes available.</p>`;
+    return;
+  }
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const quote = quotes[randomIndex];
+  document.getElementById("quoteDisplay").innerHTML = `
+    <p>"${quote.text}"</p>
+    <small>Category: ${quote.category}</small>
+  `;
+  sessionStorage.setItem("lastQuote", JSON.stringify(quote));
+}
+
 // Show last viewed quote or filter quotes on load
 function showLastViewedQuote() {
   const lastQuote = sessionStorage.getItem("lastQuote");
@@ -218,7 +233,7 @@ function showNotification(message) {
 }
 
 // DOM event bindings
-document.getElementById("newQuote").addEventListener("click", filterQuotes);
+document.getElementById("newQuote").addEventListener("click", showRandomQuote);
 document.getElementById("addQuoteBtn").addEventListener("click", addQuote);
 
 // Initialize app
