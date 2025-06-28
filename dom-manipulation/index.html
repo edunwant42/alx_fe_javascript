@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dynamic Quote Generator</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
 </head>
 <body>
   <div class="container">
@@ -13,8 +19,15 @@
     <div id="quoteDisplay"></div>
     <button id="newQuote">Show New Quote</button>
 
-    <!-- Dynamic form will be injected here -->
+    <!-- Quote input form -->
     <div id="formContainer"></div>
+
+    <!-- Actions: Add, Export, Import -->
+    <div class="quote-actions">
+      <button id="addQuoteBtn">Add Quote</button>
+      <button onclick="exportToJson()">Export Quotes</button>
+      <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+    </div>
   </div>
 
   <script src="script.js"></script>
