@@ -10,14 +10,21 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
-
 </head>
 <body>
   <div class="container">
     <h1>Dynamic Quote Generator</h1>
 
     <div id="quoteDisplay"></div>
-    <button id="newQuote">Show New Quote</button>
+
+    <!-- Filter and Show Quote button on same line -->
+    <div class="filter-and-button">
+      <select id="categoryFilter" onchange="filterQuotes()">
+        <option value="all">All Categories</option>
+        <!-- dynamically populated -->
+      </select>
+      <button id="newQuote">Show New Quote</button>
+    </div>
 
     <!-- Quote input form -->
     <div id="formContainer"></div>
