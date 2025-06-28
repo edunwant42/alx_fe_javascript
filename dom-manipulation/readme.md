@@ -1,5 +1,8 @@
 # 💬 Dynamic Quote Generator
 
+
+![Preview of the Dynamic Quote Generator](./preview.png)
+
 This project is a dynamic, interactive Quote Generator built using **HTML, CSS, and JavaScript**. It features advanced DOM manipulation, category filtering, local and session storage usage, and real-time syncing with a mock server API.
 
 ## 🚀 Features
@@ -28,6 +31,8 @@ This project is a dynamic, interactive Quote Generator built using **HTML, CSS, 
 ├── index.html # Main HTML file
 ├── style.css # Styling file (not required)
 ├── script.js # JavaScript logic
+├── readme.md # This readme file
+├── preview.png # Project preview
 └── sample-quotes.json # Sample JSON data (for import/export)
 ```
 
